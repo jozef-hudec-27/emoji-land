@@ -4,7 +4,9 @@ export default function Navbar() {
   return (
     <nav>
       <h1>
-        <Link to="/">Muscle Meals</Link>
+        <Link to="/">
+          <span aria-hidden="true">😍</span> <span>EmojiLand</span> <span aria-hidden="true">😋</span>
+        </Link>
       </h1>
 
       <ul>
