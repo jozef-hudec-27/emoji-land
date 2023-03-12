@@ -4,15 +4,17 @@ import Navbar from './components/Navbar'
 
 function App() {
   return (
-    <div>
+    <>
       <BrowserRouter>
         <Navbar />
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
+        <div id="main">
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </div>
       </BrowserRouter>
-    </div>
+    </>
   )
 }
 
