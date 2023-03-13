@@ -24,6 +24,10 @@ ul {
   padding: 0;
 }
 
+button {
+  @extend %reset-appearance;
+}
+
 #root {
   height: 100%;
 }
@@ -47,6 +51,10 @@ a {
   text-decoration: none;
 }
 
+p {
+  margin: 0;
+}
+
 nav {
   height: 70px;
   display: flex;
@@ -54,7 +62,6 @@ nav {
   align-items: center;
   box-shadow: 0 0 10px 5px rgba(240, 128, 128, 0.5);
   background-color: lighten(lightcoral, 20%);
-  transition-duration: 1s;
 
   h1 {
     font-size: 2.5rem;
@@ -121,15 +128,77 @@ nav {
   }
 }
 
+.emoji-detail {
+  background-color: white;
+  height: fit-content;
+  width: 25vw;
+  min-height: 25vw;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 32px;
+  margin-top: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+button.add-to-cart {
+  background-color: lightgreen;
+  padding: 8px 24px;
+  border-radius: 999px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+
+  &:hover,
+  &:focus {
+    background-color: darken(lightgreen, 10%);
+  }
+
+  svg {
+    transform: rotate(20deg);
+    font-size: 1.5em;
+  }
+}
+
+.counter {
+  button {
+    background-color: lightgrey;
+    color: white;
+
+    &:hover,
+    &:focus {
+      background-color: grey;
+    }
+  }
+}
+
 @media (max-width: 1180px) {
 }
 
 @media (max-width: 768px) {
+  .emoji-detail {
+    width: 50vw;
+    min-height: 50vw;
+  }
 }
 
 @media (max-width: 576px) {
   nav {
     flex-direction: column;
     padding: 16px 0 12px 0;
+  }
+
+  .add-to-cart-container {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 12px;
+
+    .counter {
+      margin-left: unset;
+    }
   }
 }

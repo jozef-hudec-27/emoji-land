@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './components/pages/Home'
 import Navbar from './components/Navbar'
 import Shop from './components/pages/Shop'
+import EmojiDetail from './components/pages/EmojiDetail'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/shop" element={<Shop />} />
+            <Route path="/emoji/:emoji" element={<EmojiDetail />} />
           </Routes>
         </div>
       </BrowserRouter>

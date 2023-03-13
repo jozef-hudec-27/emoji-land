@@ -61,4 +61,13 @@ const emojis = [
   },
 ]
 
-export { emojis }
+const findEmoji = (identificator) => {
+  for (let i = 0; i < emojis.length; i++) {
+    const { emoji, name, description } = emojis[i]
+    if ([emoji, name, description].includes(identificator)) {
+      return emojis[i]
+    }
+  }
+}
+
+export { emojis, findEmoji }
