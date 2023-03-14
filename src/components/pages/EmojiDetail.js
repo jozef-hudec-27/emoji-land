@@ -1,19 +1,19 @@
 import { useParams } from 'react-router-dom'
 import { findEmoji } from '../../helpers/emojis'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCartShopping, faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import AddToCartBtn from '../AddToCartBtn'
+import EmojiNotFound from '../emoji/EmojiNotFound'
+import ProductCounter from '../ProductCounter'
 
 export default function EmojiDetail() {
   const params = useParams()
   const emojiObj = findEmoji(params.emoji)
 
-  if (!emojiObj) {
+  if (!emojiObj)
     return (
-      <div>
-        <h2>EMOJI NOT FOUND</h2>
+      <div className="full-width full-height flexbox flex-justify-center">
+        <EmojiNotFound />
       </div>
     )
-  }
 
   const { name, emoji, description } = emojiObj
 
@@ -32,19 +32,8 @@ export default function EmojiDetail() {
         <p style={{ textAlign: 'justify' }}>{description}</p>
 
         <div className="add-to-cart-container flexbox full-width mt-12">
-          <button className="add-to-cart">
-            <FontAwesomeIcon icon={faCartShopping} /> Add to cart
-          </button>
-
-          <div className="counter flexbox flex-align-center ml-auto gap-10">
-            <button>
-              <FontAwesomeIcon icon={faChevronUp} />
-            </button>
-            <p>0</p>
-            <button>
-              <FontAwesomeIcon icon={faChevronDown} />
-            </button>
-          </div>
+          <AddToCartBtn />
+          <ProductCounter />
         </div>
       </div>
     </div>

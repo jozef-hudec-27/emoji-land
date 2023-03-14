@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <div className="flexbox flex-justify-center full-height p-8">
-      <div id="home-hero" className="flexbox flex-center gap-12">
+      <div id="home-hero" className="card flexbox flex-center gap-12">
         <div style={{ fontSize: '4rem' }}>😎</div>
 
         <div className="flexbox flex-column">

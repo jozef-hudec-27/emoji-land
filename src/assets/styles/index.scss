@@ -96,11 +96,6 @@ nav {
 }
 
 #home-hero {
-  background-color: white;
-  height: fit-content;
-  padding: 32px;
-  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
   margin-top: 25vh;
 }
 
@@ -143,6 +138,10 @@ nav {
   justify-content: center;
 }
 
+.emoji-not-found {
+  margin-top: 25vh;
+}
+
 button.add-to-cart {
   background-color: lightgreen;
   padding: 8px 24px;
@@ -164,7 +163,7 @@ button.add-to-cart {
   }
 }
 
-.counter {
+.product-counter {
   button {
     background-color: lightgrey;
     color: white;
@@ -197,7 +196,7 @@ button.add-to-cart {
     align-items: center;
     gap: 12px;
 
-    .counter {
+    .product-counter {
       margin-left: unset;
     }
   }
