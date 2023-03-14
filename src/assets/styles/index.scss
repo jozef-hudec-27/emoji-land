@@ -134,8 +134,8 @@ nav {
   margin-top: 25vh;
 }
 
-button.add-to-cart {
-  background-color: lightgreen;
+button.add-to-cart,
+button.remove-from-cart {
   padding: 8px 24px;
   border-radius: 999px;
   cursor: pointer;
@@ -144,14 +144,28 @@ button.add-to-cart {
   gap: 8px;
   font-weight: 600;
 
+  svg {
+    transform: rotate(20deg);
+    font-size: 1.5em;
+  }
+}
+
+button.add-to-cart {
+  background-color: lightgreen;
+
   &:hover,
   &:focus {
     background-color: darken(lightgreen, 10%);
   }
+}
 
-  svg {
-    transform: rotate(20deg);
-    font-size: 1.5em;
+button.remove-from-cart {
+  background-color: red;
+  color: white;
+
+  &:hover,
+  &:focus {
+    background-color: darken(red, 10%);
   }
 }
 

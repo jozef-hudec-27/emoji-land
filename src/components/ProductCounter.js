@@ -1,14 +1,14 @@
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-export default function ProductCounter(props) {
+export default function ProductCounter({ count, onUpClick, onDownClick }) {
   return (
     <div className="product-counter flexbox flex-align-center ml-auto gap-10">
-      <button>
+      <button onClick={onUpClick}>
         <FontAwesomeIcon icon={faChevronUp} />
       </button>
-      <p>0</p>
-      <button>
+      <p>{count}</p>
+      <button onClick={onDownClick}>
         <FontAwesomeIcon icon={faChevronDown} />
       </button>
     </div>

@@ -5,40 +5,92 @@ import Shop from './components/pages/Shop'
 import EmojiDetail from './components/pages/EmojiDetail'
 import PageNotFound from './components/pages/PageNotFound'
 import Cart from './components/pages/Cart'
-
-const tempCartItems = [
-  {
-    emoji: '😀',
-    name: 'Grinning Face',
-    description:
-      'A yellow face with simple, open eyes and a broad, open smile, showing upper teeth and tongue on some platforms. Often conveys general pleasure and good cheer or humor.',
-  },
-  {
-    emoji: '😂',
-    name: 'Face with Tears of Joy',
-    description:
-      'A yellow face with a big grin, uplifted eyebrows, and smiling eyes, each shedding a tear from laughing so hard. Widely used to show something is funny or pleasing.',
-  },
-  {
-    emoji: '🙂',
-    name: 'Slightly Smiling Face',
-    description:
-      'A yellow face with simple, open eyes and a thin, closed smile. Conveys a wide range of positive, happy, and friendly sentiments. Its tone can also be patronizing, passive-aggressive, or ironic, as if saying This is fine when it’s really not.',
-  },
-]
+import { useState } from 'react'
 
 function App() {
+  const [cart, setCart] = useState([])
+
+  const addToCart = (emojiObj, quantity) => {
+    setCart((prevCart) => [...prevCart, [emojiObj, quantity]])
+  }
+
+  const removeFromCart = (emoji) => {
+    setCart((prevCart) => {
+      const newCart = [...prevCart]
+
+      for (let i = 0; i < newCart.length; i++) {
+        if (cart[i][0].emoji === emoji) {
+          newCart.splice(i, 1)
+          return newCart
+        }
+      }
+
+      return newCart
+    })
+  }
+
+  const changeQuantity = (emoji, increment) => {
+    setCart((prevCart) => {
+      const newCart = [...prevCart]
+      for (let i = 0; i < newCart.length; i++) {
+        if (newCart[i][0].emoji === emoji) {
+          newCart[i] = [newCart[i][0], newCart[i][1] + increment]
+
+          // IN CASE WE'RE LOWERING THE QUANTITY
+          if (newCart[i][1] <= 0) newCart.splice(i, 1)
+
+          return newCart
+        }
+      }
+
+      return newCart
+    })
+  }
+
+  const cartContains = (item) => {
+    const emoji = item.emoji
+
+    for (let x of cart) {
+      if (x[0].emoji === emoji) {
+        return x[1] > 0
+      }
+    }
+
+    return false
+  }
+
+  const cartCount = (emoji) => {
+    for (let x of cart) {
+      if (x[0].emoji === emoji) {
+        return x[1]
+      }
+    }
+
+    return 0
+  }
+
   return (
     <>
       <BrowserRouter>
-        <Navbar />
+        <Navbar cart={cart} />
 
         <div id="main">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/shop" element={<Shop />} />
-            <Route path="/cart" element={<Cart cartItems={tempCartItems} />} />
-            <Route path="/emoji/:emoji" element={<EmojiDetail />} />
+            <Route path="/cart" element={<Cart cartItems={cart} />} />
+            <Route
+              path="/emoji/:emoji"
+              element={
+                <EmojiDetail
+                  changeQuantity={changeQuantity}
+                  addToCart={addToCart}
+                  removeFromCart={removeFromCart}
+                  cartContains={cartContains}
+                  cartCount={cartCount}
+                />
+              }
+            />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </div>

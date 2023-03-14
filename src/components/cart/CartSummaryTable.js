@@ -11,11 +11,13 @@ export default function CartSummaryTable({ items }) {
 
       <tbody>
         {items.map((item, i) => {
+          const [emojiObj, quantity] = item
+
           return (
             <tr key={i}>
-              <td>{item.emoji}</td>
-              <td>10</td>
-              <td>5</td>
+              <td>{emojiObj.emoji}</td>
+              <td>{quantity}</td>
+              <td>{emojiObj.price}</td>
             </tr>
           )
         })}

@@ -4,8 +4,6 @@ import CartSummary from '../cart/CartSummary'
 import Page from './Page'
 
 export default function Cart({ cartItems }) {
-  cartItems = []
-
   return (
     <Page>
       <section id="cart" style={{ display: !cartItems.length && 'block' }}>
