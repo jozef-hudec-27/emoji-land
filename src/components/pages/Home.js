@@ -1,6 +1,8 @@
+import Page from './Page'
+
 export default function Home() {
   return (
-    <div className="flexbox flex-justify-center full-height p-8">
+    <Page>
       <div id="home-hero" className="card flexbox flex-center gap-12">
         <div style={{ fontSize: '4rem' }}>😎</div>
 
@@ -9,6 +11,6 @@ export default function Home() {
           <p>Whether you're feeling happy, sad, or somewhere in between, we've got the perfect emoji for you.</p>
         </div>
       </div>
-    </div>
+    </Page>
   )
 }

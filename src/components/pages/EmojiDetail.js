@@ -3,6 +3,7 @@ import { findEmoji } from '../../helpers/emojis'
 import AddToCartBtn from '../AddToCartBtn'
 import EmojiNotFound from '../emoji/EmojiNotFound'
 import ProductCounter from '../ProductCounter'
+import Page from './Page'
 
 export default function EmojiDetail() {
   const params = useParams()
@@ -10,16 +11,16 @@ export default function EmojiDetail() {
 
   if (!emojiObj)
     return (
-      <div className="full-width full-height flexbox flex-justify-center">
+      <Page>
         <EmojiNotFound />
-      </div>
+      </Page>
     )
 
   const { name, emoji, description } = emojiObj
 
   return (
-    <div className="flexbox flex-justify-center full-height">
-      <div className="emoji-detail">
+    <Page>
+      <div className="emoji-detail card flexbox flex-column flex-center">
         <p style={{ fontSize: '5rem' }}>{emoji}</p>
 
         <div className="flexbox flex-align-center full-width">
@@ -36,6 +37,6 @@ export default function EmojiDetail() {
           <ProductCounter />
         </div>
       </div>
-    </div>
+    </Page>
   )
 }
