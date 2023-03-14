@@ -1,4 +1,5 @@
 @use 'utilities';
+@use 'config' as *;
 
 @font-face {
   font-family: 'letters-for-learners';
@@ -60,15 +61,15 @@ nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  box-shadow: 0 0 10px 5px rgba(240, 128, 128, 0.5);
-  background-color: lighten(lightcoral, 20%);
+  box-shadow: 0 0 10px 5px rgba($main-color, 0.5);
+  background-color: $bg-color;
 
   h1 {
     font-size: 2.5rem;
 
     a {
       display: flex;
-      color: lightcoral;
+      color: $main-color;
       align-items: center;
       gap: 4px;
     }
@@ -85,7 +86,7 @@ nav {
 
     li {
       a {
-        color: lightcoral;
+        color: $main-color;
 
         &:hover {
           text-decoration: overline;
@@ -112,7 +113,7 @@ nav {
 }
 
 .emoji-card {
-  border: 1px solid grey;
+  border: 1px solid lightgrey;
   width: 300px;
   height: 300px;
   background-color: rgba(255, 255, 255, 0.65);
@@ -166,7 +167,77 @@ button.add-to-cart {
   }
 }
 
+#cart {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 50%;
+  background-color: rgba(255, 255, 255, 0.35);
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.cart-summary-table {
+  border-collapse: collapse;
+  font-size: 0.9em;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  width: 90%;
+  margin: 0 auto;
+
+  thead tr {
+    background-color: lighten($main-color, 10%);
+    color: white;
+    text-align: left;
+    font-family: letters-for-learners;
+    font-size: 1.3em;
+  }
+
+  th,
+  td {
+    padding: 12px 15px;
+  }
+
+  tbody {
+    tr {
+      background-color: rgba(255, 255, 255, 0.8);
+      border-bottom: 1px solid #dddddd;
+    }
+
+    tr:nth-of-type(even) {
+      background-color: rgb(243, 243, 243, 0.9);
+    }
+
+    tr:last-of-type {
+      border-bottom: 2px solid lighten($main-color, 10%);
+    }
+  }
+}
+
+.clear-cart-btn,
+.checkout-btn {
+  color: white;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition-duration: 0.5s;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.05);
+  }
+}
+
+.clear-cart-btn {
+  background-color: lighten(red, 10%);
+}
+
+.checkout-btn {
+  background-color: lighten(green, 20%);
+}
+
 @media (max-width: 1180px) {
+  #cart {
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 768px) {
@@ -190,5 +261,11 @@ button.add-to-cart {
     .product-counter {
       margin-left: unset;
     }
+  }
+
+  #cart {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
   }
 }
