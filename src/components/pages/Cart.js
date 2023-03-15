@@ -1,6 +1,7 @@
 import CartEmpty from '../cart/CartEmpty'
 import CartItems from '../cart/CartItems'
 import CartSummary from '../cart/CartSummary'
+import CheckoutModal from '../CheckoutModal'
 import Page from './Page'
 
 export default function Cart({ cartItems, cartContains, addToCart, changeQuantity, calculateTotalCart, clearCart }) {
@@ -30,6 +31,8 @@ export default function Cart({ cartItems, cartContains, addToCart, changeQuantit
           <CartEmpty />
         )}
       </section>
+
+      <CheckoutModal show={true} />
     </Page>
   )
 }
