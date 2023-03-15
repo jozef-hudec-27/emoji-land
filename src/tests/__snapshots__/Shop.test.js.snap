@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Shop component renders 10 emoji cards 1`] = `
+<div>
+  <section
+    id="shop"
+  >
+    <div
+      id="emoji-list"
+    >
+      <a
+        class="emoji-card flexbox flex-center"
+        href="/emoji/😀"
+      >
+        <h3>
+          😀
+        </h3>
+      </a>
+      <a
+        class="emoji-card flexbox flex-center"
+        href="/emoji/😂"
+      >
+        <h3>
+          😂
+        </h3>
+      </a>
+      <a
+        class="emoji-card flexbox flex-center"
+        href="/emoji/🙂"
+      >
+        <h3>
+          🙂
+        </h3>
+      </a>
+      <a
+        class="emoji-card flexbox flex-center"
+        href="/emoji/🙃"
+      >
+        <h3>
+          🙃
+        </h3>
+      </a>
+      <a
+        class="emoji-card flexbox flex-center"
+        href="/emoji/🫠"
+      >
+        <h3>
+          🫠
+        </h3>
+      </a>
+      <a
+        class="emoji-card flexbox flex-center"
+        href="/emoji/😉"
+      >
+        <h3>
+          😉
+        </h3>
+      </a>
+      <a
+        class="emoji-card flexbox flex-center"
+        href="/emoji/🥰"
+      >
+        <h3>
+          🥰
+        </h3>
+      </a>
+      <a
+        class="emoji-card flexbox flex-center"
+        href="/emoji/😢"
+      >
+        <h3>
+          😢
+        </h3>
+      </a>
+      <a
+        class="emoji-card flexbox flex-center"
+        href="/emoji/😠"
+      >
+        <h3>
+          😠
+        </h3>
+      </a>
+      <a
+        class="emoji-card flexbox flex-center"
+        href="/emoji/😈"
+      >
+        <h3>
+          😈
+        </h3>
+      </a>
+    </div>
+  </section>
+</div>
+`;
