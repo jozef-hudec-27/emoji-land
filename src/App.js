@@ -97,7 +97,7 @@ function App() {
               path="/cart"
               element={
                 <Cart
-                  cartItems={cart}
+                  cart={cart}
                   cartContains={cartContains}
                   addToCart={addToCart}
                   changeQuantity={changeQuantity}

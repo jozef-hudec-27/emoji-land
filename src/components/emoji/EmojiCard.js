@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 
 export default function EmojiCard({ emojiObj }) {
-  const { emoji, description, name } = emojiObj
+  const { emoji } = emojiObj
 
   return (
     <Link to={`/emoji/${emoji}`} className="emoji-card flexbox flex-center">
