@@ -60,13 +60,28 @@ function App() {
   }
 
   const cartCount = (emoji) => {
-    for (let x of cart) {
-      if (x[0].emoji === emoji) {
-        return x[1]
+    for (let item of cart) {
+      if (item[0].emoji === emoji) {
+        return item[1]
       }
     }
 
     return 0
+  }
+
+  const calculateTotalCart = () => {
+    let total = 0
+
+    for (let item of cart) {
+      const { price } = item[0]
+      total += price * item[1]
+    }
+
+    return total
+  }
+
+  const clearCart = () => {
+    setCart([])
   }
 
   return (
@@ -78,7 +93,19 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/shop" element={<Shop />} />
-            <Route path="/cart" element={<Cart cartItems={cart} />} />
+            <Route
+              path="/cart"
+              element={
+                <Cart
+                  cartItems={cart}
+                  cartContains={cartContains}
+                  addToCart={addToCart}
+                  changeQuantity={changeQuantity}
+                  calculateTotalCart={calculateTotalCart}
+                  clearCart={clearCart}
+                />
+              }
+            />
             <Route
               path="/emoji/:emoji"
               element={
