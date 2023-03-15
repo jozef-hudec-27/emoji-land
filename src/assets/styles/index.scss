@@ -19,6 +19,7 @@ body {
   background-size: cover;
   background-position: center;
   height: 100vh;
+  cursor: url('../images/default_cursor_32x32.png'), auto;
 }
 
 ul {
@@ -27,6 +28,11 @@ ul {
 
 button {
   @extend %reset-appearance;
+  cursor: url('../images/default_cursor_32x32.png'), auto;
+}
+
+a {
+  cursor: url('../images/pointer_cursor_32x32.png'), auto;
 }
 
 #root {
@@ -138,7 +144,7 @@ button.add-to-cart,
 button.remove-from-cart {
   padding: 8px 24px;
   border-radius: 999px;
-  cursor: pointer;
+  cursor: url('../images/pointer_cursor_32x32.png'), pointer;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -237,7 +243,7 @@ button.remove-from-cart {
   color: white;
   font-weight: 600;
   border-radius: 4px;
-  cursor: pointer;
+  cursor: url('../images/pointer_cursor_32x32.png'), pointer;
   transition-duration: 0.5s;
 
   &:hover,
@@ -309,7 +315,7 @@ button.remove-from-cart {
   position: absolute;
   top: 8px;
   right: 8px;
-  cursor: pointer;
+  cursor: url('../images/pointer_cursor_32x32.png'), pointer;
 
   &:hover,
   &:focus {
@@ -321,7 +327,7 @@ button.remove-from-cart {
   border: 3px solid $bg-color;
   border-radius: 999px;
   padding: 4px 12px;
-  cursor: pointer;
+  cursor: url('../images/pointer_cursor_32x32.png'), pointer;
   color: rgb(69, 69, 69);
   margin-top: 12px;
 
@@ -330,6 +336,26 @@ button.remove-from-cart {
     background-color: lighten($bg-color, 6%);
     text-decoration: line-through;
   }
+}
+
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $main-color;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $bg-color;
+}
+
+::selection {
+  background-color: rgb(253, 224, 48);
 }
 
 @media (max-width: 1180px) {
