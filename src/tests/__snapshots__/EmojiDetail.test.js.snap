@@ -24,7 +24,7 @@ exports[`EmojiDetail component renders emoji, name, description and price 1`] = 
           style="color: green;"
         >
           $
-          1
+          7
         </h3>
       </div>
       <p
