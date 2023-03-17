@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/emoji-land/static/css/main.67f18aae.css",
-    "main.js": "/emoji-land/static/js/main.0edf106a.js",
+    "main.js": "/emoji-land/static/js/main.9e7da864.js",
     "static/media/bg-blur.png": "/emoji-land/static/media/bg-blur.6b3e84769fe74bb6c402.png",
     "static/media/letters_for_learners-webfont.woff": "/emoji-land/static/media/letters_for_learners-webfont.378ed4f6f30f2a296f59.woff",
     "static/media/letters_for_learners-webfont.woff2": "/emoji-land/static/media/letters_for_learners-webfont.70c59f769647ba8d1fd4.woff2",
     "index.html": "/emoji-land/index.html",
     "main.67f18aae.css.map": "/emoji-land/static/css/main.67f18aae.css.map",
-    "main.0edf106a.js.map": "/emoji-land/static/js/main.0edf106a.js.map"
+    "main.9e7da864.js.map": "/emoji-land/static/js/main.9e7da864.js.map"
   },
   "entrypoints": [
     "static/css/main.67f18aae.css",
-    "static/js/main.0edf106a.js"
+    "static/js/main.9e7da864.js"
   ]
 }
